@@ -4,25 +4,25 @@ Nodejs authentication microservice for mariadb
 To configure microservice add this to a config.json file with your own data in the project folder
 ```json
 {
-    "port": number,
+    "port": 3000,
     "db": {
-        "host": string,
-        "database": string,
-        "username": string,
-        "password": string
+        "host": "",
+        "database": "",
+        "username": "",
+        "password": ""
     },
     "passport": {
         "fortyTwo": {
-            "id": string,
-            "secret": string
+            "id": "",
+            "secret": ""
         },
         "github": {
-            "id": string,
-            "secret": string
+            "id": "",
+            "secret": ""
         },
         "facebook": {
-            "id": string,
-            "secret": string
+            "id": "",
+            "secret": ""
         }
     }
 }
