@@ -8,6 +8,8 @@ const db = require('./utils/db.js')
 global.config = JSON.parse(require('fs').readFileSync(require('path').resolve(require('path').dirname(__dirname), 'config.json'), 'UTF-8'))
 const port = global.config.port || 3005
 
+if (process.env.NODE_ENV === 'production') global.config.db.host = 'localhost'
+
 db.connect(global.config.db)
 
 require('./utils/passport.js')
