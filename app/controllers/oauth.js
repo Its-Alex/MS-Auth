@@ -1,6 +1,6 @@
 const uuidv4 = require('uuid/v4')
 
-const model = require('../../models/user.js')
+const model = require('../models/user.js')
 
 let getUserFromProfile = (profile) => {
   let user = {}

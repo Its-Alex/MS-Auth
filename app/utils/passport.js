@@ -17,17 +17,17 @@ passport.use(new FortyTwoStrategy({
     'phoneNumbers.0.value': 'phone',
     'photos.0.value': 'image_url'
   }
-}, require('../controllers/user/oauth.js')))
+}, require('../controllers/oauth.js')))
 
 passport.use(new GitHubStrategy({
   clientID: global.config.passport.github.id,
   clientSecret: global.config.passport.github.secret,
   callbackURL: 'http://localhost:3005/auth/github/callback'
-}, require('../controllers/user/oauth.js')))
+}, require('../controllers/oauth.js')))
 
 passport.use(new FacebookStrategy({
   clientID: global.config.passport.facebook.id,
   clientSecret: global.config.passport.facebook.secret,
   callbackURL: 'http://localhost:3005/auth/facebook/callback',
   profileFields: ['id', 'displayName', 'photos', 'emails']
-}, require('../controllers/user/oauth.js')))
+}, require('../controllers/oauth.js')))

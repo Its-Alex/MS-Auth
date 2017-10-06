@@ -3,7 +3,7 @@ const isEmail = require('validator/lib/isEmail')
 const bcrypt = require('bcryptjs')
 const uuid = require('uuid')
 
-const model = require('../../models/user.js')
+const model = require('../models/user.js')
 
 function error (res, error, status) {
   res.status(status)

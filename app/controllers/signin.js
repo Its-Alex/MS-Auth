@@ -2,8 +2,8 @@ const isEmpty = require('validator/lib/isEmpty')
 const isEmail = require('validator/lib/isEmail')
 const bcrypt = require('bcryptjs')
 
-const model = require('../../models/user.js')
-const modelToken = require('../../models/token.js')
+const model = require('../models/user.js')
+const modelToken = require('../models/token.js')
 
 function genToken () {
   var str = `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`
