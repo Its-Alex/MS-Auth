@@ -29,7 +29,6 @@ module.exports = (scope) => {
         mail: results[0].mail,
         mail_at: results[0].mail_at,
         scope: results[0].scope,
-        lastName: results[0].lastName,
         password: results[0].password
       }
       next()
