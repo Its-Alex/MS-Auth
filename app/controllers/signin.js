@@ -44,7 +44,12 @@ module.exports = (req, res) => {
         if (results.affectedRows === 1) {
           res.json({
             success: true,
-            token
+            user: {
+              token,
+              id: results[0].id,
+              mail: results[0].mail,
+              mail_at: results[0].mail_at
+            }
           })
         } else {
           return error(res, 'Wrong password', 403)
