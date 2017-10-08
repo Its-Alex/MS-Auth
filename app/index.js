@@ -16,7 +16,8 @@ require('./utils/passport.js')
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
-	res.header("Access-Control-Allow-Headers", "Authorization")
+  res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, PATCH, DELETE, HEAD")
+  res.header("Access-Control-Allow-Headers", "Authorization")
   next()
 })
 app.use(bodyParser.urlencoded({extended: true, limit: '512kb'}))
