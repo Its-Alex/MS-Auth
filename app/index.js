@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const passport = require('passport')
-const cors = require('cors')
 const db = require('./utils/db.js')
 
 global.config = JSON.parse(require('fs').readFileSync(require('path').resolve(require('path').dirname(__dirname), 'config.json'), 'UTF-8'))
@@ -13,6 +13,7 @@ if (process.env.NODE_ENV === 'production') global.config.db.host = 'localhost'
 db.connect(global.config.db)
 
 require('./utils/passport.js')
+
 
 app.use(cors())
 app.use(bodyParser.urlencoded({extended: true, limit: '512kb'}))
