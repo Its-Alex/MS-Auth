@@ -40,8 +40,8 @@ module.exports = (req, res) => {
     if (results.length === 0) return error(res, 'User not found', 403)
     if (bcrypt.compareSync(req.body.password, results[0].password)) {
       let token = genToken()
-      modelToken.addToken(results[0].id, token).then(results => {
-        if (results.affectedRows === 1) {
+      modelToken.addToken(results[0].id, token).then(result => {
+        if (result.affectedRows === 1) {
           res.json({
             success: true,
             user: {
@@ -54,6 +54,9 @@ module.exports = (req, res) => {
         } else {
           return error(res, 'Wrong password', 403)
         }
+      }).catch(err => {
+        console.log(err)
+        return error(res, 'Internal server error', 500)
       })
     } else {
       return error(res, 'Wrong password', 403)
