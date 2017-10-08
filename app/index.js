@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const passport = require('passport')y
 const db = require('./utils/db.js')
@@ -14,11 +15,7 @@ db.connect(global.config.db)
 require('./utils/passport.js')
 
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*")
-	res.header("Access-Control-Allow-Headers", "Authorization")
-  next()
-})
+app.use(cors())
 app.use(bodyParser.urlencoded({extended: true, limit: '512kb'}))
 app.use(bodyParser.json({limit: '5mb'}))
 app.use(passport.initialize())
