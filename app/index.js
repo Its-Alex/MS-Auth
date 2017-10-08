@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const passport = require('passport')y
+const passport = require('passport')
 const db = require('./utils/db.js')
 
 global.config = JSON.parse(require('fs').readFileSync(require('path').resolve(require('path').dirname(__dirname), 'config.json'), 'UTF-8'))
